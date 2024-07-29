@@ -298,7 +298,7 @@ func run(opts runOpts) error {
 	}
 	serviceName = tryFixServiceName(serviceName)
 
-	image := fmt.Sprintf("gcr.io/%s/%s", project, serviceName)
+	image := fmt.Sprintf("%s-docker.pkg.dev/%s/%s", region, project, serviceName)
 
 	existingEnvVars := make(map[string]struct{})
 	// todo(jamesward) actually determine if the service exists instead of assuming it doesn't if we get an error
